@@ -5,13 +5,16 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --text-color: #1f2937;
-    --text-light: #6b7280;
-    --bg-color: #ffffff;
-    --bg-secondary: #f3f4f6;
-    --border-color: #e5e7eb;
+    --primary-color: #a855f7;
+    --primary-dark: #9333ea;
+    --primary-glow: rgba(168, 85, 247, 0.4);
+    --accent-color: #c084fc;
+    --text-color: #f1f5f9;
+    --text-light: #94a3b8;
+    --bg-color: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #1a1a2e;
+    --border-color: #2d2d44;
 }
 
 html {
@@ -23,6 +26,10 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
+    background-image:
+        linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
 }
 
 /* Navigation */
@@ -31,19 +38,21 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: var(--bg-color);
+    background-color: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-glow);
 }
 
 .nav-links {
@@ -61,6 +70,7 @@ body {
 
 .nav-links a:hover {
     color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-glow);
 }
 
 .menu-toggle {
@@ -76,7 +86,7 @@ body {
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background-color: var(--text-color);
+    background-color: var(--primary-color);
     transition: 0.3s;
 }
 
@@ -88,16 +98,21 @@ body {
     justify-content: center;
     text-align: center;
     padding: 0 5%;
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-color) 100%);
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+        var(--bg-color);
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    text-shadow: 0 0 40px var(--primary-glow);
 }
 
 .highlight {
     color: var(--primary-color);
+    text-shadow: 0 0 20px var(--primary-glow);
 }
 
 .hero-content p {
@@ -110,19 +125,21 @@ body {
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    border: none;
+    border: 1px solid var(--primary-color);
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px var(--primary-glow);
 }
 
 .btn:hover {
-    background-color: var(--primary-dark);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
     transform: translateY(-2px);
+    box-shadow: 0 0 30px var(--primary-glow), 0 0 60px rgba(168, 85, 247, 0.2);
 }
 
 .btn-small {
@@ -140,6 +157,7 @@ section h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: var(--text-color);
+    text-shadow: 0 0 30px var(--primary-glow);
 }
 
 /* About Section */
@@ -172,11 +190,20 @@ section h2 {
 }
 
 .skills-list li {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: transparent;
+    color: var(--primary-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-glow);
+    transition: all 0.3s ease;
+}
+
+.skills-list li:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 20px var(--primary-glow);
 }
 
 /* Projects Section */
@@ -189,16 +216,17 @@ section h2 {
 }
 
 .project-card {
-    background-color: var(--bg-color);
+    background-color: var(--bg-card);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 30px var(--primary-glow);
 }
 
 .project-image {
@@ -206,6 +234,7 @@ section h2 {
     background-color: var(--bg-secondary);
     background-size: cover;
     background-position: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .project-info {
@@ -249,21 +278,25 @@ section h2 {
     border-radius: 5px;
     font-size: 1rem;
     font-family: inherit;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    background-color: var(--bg-card);
+    color: var(--text-color);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-glow);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: var(--text-color);
-    color: white;
+    background-color: var(--bg-secondary);
+    color: var(--text-light);
+    border-top: 1px solid var(--border-color);
 }
 
 /* Responsive */
@@ -293,12 +326,13 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: var(--bg-color);
+        background-color: rgba(10, 10, 15, 0.98);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         padding: 1rem 5%;
         gap: 1rem;
         display: none;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid var(--border-color);
     }
 
     .nav-links.active {

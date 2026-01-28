@@ -15,24 +15,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Gestion du formulaire de contact
-const contactForm = document.getElementById('contact-form');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(contactForm);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message')
-    };
-
-    console.log('Formulaire soumis:', data);
-    alert('Merci pour votre message ! Je vous répondrai bientôt.');
-    contactForm.reset();
-});
-
 // Animation au scroll pour la navbar
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');

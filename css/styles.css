@@ -274,7 +274,39 @@ section h2 {
 
 .project-info p {
     color: var(--text-light);
+    margin-bottom: 0.75rem;
+}
+
+.project-info > .btn {
+    width: 100%;
+    text-align: center;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.project-buttons .btn {
+    flex: 1;
+    text-align: center;
+}
+
+.project-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-bottom: 1rem;
+}
+
+.tech-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    background-color: rgba(16, 185, 129, 0.15);
+    color: var(--accent-color);
+    border-radius: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
 
 /* Slider Buttons */

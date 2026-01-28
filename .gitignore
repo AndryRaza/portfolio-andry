@@ -1,15 +1,37 @@
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*.sublime-project
+*.sublime-workspace
 
 # Logs
 *.log
+npm-debug.log*
 
 # Node (si ajouté plus tard)
 node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Sensitive files
+*.pem
+*.key
+*.crt
+credentials.json
+secrets.json

@@ -247,9 +247,21 @@ section h2 {
 .project-image {
     height: 200px;
     background-color: var(--bg-secondary);
-    background-size: cover;
-    background-position: center;
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 .project-info {

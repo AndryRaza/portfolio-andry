@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-content">
+                <h1>Bonjour, je suis <span class="highlight">Votre Nom</span></h1>
+                <p>Développeur Web</p>
+                <a href="#projets" class="btn">Voir mes projets</a>
+            </div>
+        </section>
+
+        <section id="a-propos" class="about">
+            <h2>À propos de moi</h2>
+            <div class="about-content">
+                <p>Décrivez-vous ici. Parlez de votre parcours, vos compétences et ce qui vous passionne.</p>
+                <div class="skills">
+                    <h3>Compétences</h3>
+                    <ul class="skills-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets" class="projects">
+            <h2>Mes Projets</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-info">
+                        <h3>Projet 1</h3>
+                        <p>Description du projet</p>
+                        <a href="#" class="btn btn-small">Voir plus</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-info">
+                        <h3>Projet 2</h3>
+                        <p>Description du projet</p>
+                        <a href="#" class="btn btn-small">Voir plus</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-info">
+                        <h3>Projet 3</h3>
+                        <p>Description du projet</p>
+                        <a href="#" class="btn btn-small">Voir plus</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
